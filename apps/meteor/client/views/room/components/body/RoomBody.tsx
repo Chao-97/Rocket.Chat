@@ -44,7 +44,6 @@ import ComposerContainer from './composer/ComposerContainer';
 import { useChatMessages } from './useChatMessages';
 import { useFileUploadDropTarget } from './useFileUploadDropTarget';
 import { useRetentionPolicy } from './useRetentionPolicy';
-import { useRoomRoles } from './useRoomRoles';
 import { useUnreadMessages } from './useUnreadMessages';
 
 const RoomBody = (): ReactElement => {
@@ -72,7 +71,6 @@ const RoomBody = (): ReactElement => {
 	const lastScrollTopRef = useRef(0);
 
 	const chatMessagesInstance = useChatMessages(room._id, wrapperRef);
-	useRoomRoles(room._id);
 	const [fileUploadTriggerProps, fileUploadOverlayProps] = useFileUploadDropTarget(room);
 
 	const _isAtBottom = useCallback((scrollThreshold = 0) => {
